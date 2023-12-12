@@ -10,7 +10,7 @@ Type !hidehud in chat to hide/show the hud.
 ## Thunderstore
 - Download the latest release from [here](https://thunderstore.io/package/CoolestMan22/NoHudMod/).
 
-## Suggestions
+# Suggestions
 - If you have a suggestion, create an issue on github! If I don't respond within a day please contact me on discord!
 
 ## Contact
