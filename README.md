@@ -13,7 +13,7 @@ Type !hidehud in chat to hide/show the hud.
 # Installation
 
 ## Manual
-- Download the latest release from [here](https://github.com/CoolestMan22/NoHudMod/releases/tag/v1.0.0).
+- Download the latest release from [here](https://github.com/CoolestMan22/NoHudMod/releases/tag/v1.0.2).
 - Move the DLL file into your BepInEx plugins folder.
 
 ## Thunderstore
