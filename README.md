@@ -1,3 +1,12 @@
+# NoHud
+```
+┌┐   ┐  ┌───┐  ┌      ┌   ┐  ┌─┐
+│└┐  │  │   │  │   │  │   │  │ └─┐
+│ └┐ │  │   │  ├───┤  │   │  │   │
+│  └┐│  │   │  │   │  │   │  │ ┌─┘
+│   └┘  └───┘  │   │  └───┘  └─┘
+```
+
 # Usage
 Type !hidehud in chat to hide/show the hud.
 
@@ -28,13 +37,4 @@ Type !hidehud in chat to hide/show the hud.
 │ ├── Updated README.. again└─────────────────────┐
 │ │   └─ Updated Thunderstore link so its correct │ 
 └─┴───────────────────────────────────────────────┘
-```
-
-# NoHud
-```
-┌┐   ┐  ┌───┐  ┌      ┌   ┐  ┌─┐
-│└┐  │  │   │  │   │  │   │  │ └─┐
-│ └┐ │  │   │  ├───┤  │   │  │   │
-│  └┐│  │   │  │   │  │   │  │ ┌─┘
-│   └┘  └───┘  │   │  └───┘  └─┘
 ```
