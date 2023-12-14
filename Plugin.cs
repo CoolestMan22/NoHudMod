@@ -3,10 +3,11 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using CookiesVPP.patches;
 using HarmonyLib;
+using UnityEngine.InputSystem;
+using LethalCompanyInputUtils.Api;
 
 namespace CookiesVPP
 {
-
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     public class CookiesVPP_B : BaseUnityPlugin
     {
@@ -14,7 +15,8 @@ namespace CookiesVPP
 
         static CookiesVPP_B Instance;
         public static ConfigEntry<bool> configHideHud;
-        //public static ConfigEntry<bool> configDisableSpeakerIntro;
+
+        public static InputAction hideHud;
 
         public static ManualLogSource mls = BepInEx.Logging.Logger.CreateLogSource(PluginInfo.PLUGIN_GUID);
 
@@ -23,21 +25,38 @@ namespace CookiesVPP
             // Plugin startup logic
             if (Instance == null) Instance = this;
 
-            configHideHud = Config.Bind("General", "hideHud", false, "Changes whether the first person visor is visible.");
-            //configDisableSpeakerIntro = Config.Bind("General", "disableSpeakerIntro", true, "When true, the intro will not play from the speaker.");
+            configHideHud = Config.Bind("General", "hideHud", false, "Changes whether the hud is visible.");
+
             PlayerControllerBP.hideHud = configHideHud.Value;
-            //StartOfRoundP.disableIntro = configDisableSpeakerIntro.Value;
 
             mls.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded :)");
             harmony.PatchAll(typeof(CookiesVPP_B));
             harmony.PatchAll(typeof(PlayerControllerBP));
-            //harmony.PatchAll(typeof(StartOfRoundP));
             harmony.PatchAll(typeof(HudManagerP));
+        }
+
+        void Update()
+        {
+            CookiesVPP_InputClass.instance.HideHud.performed += context => HideHud();
+        }
+
+        private void HideHud()
+        {
+            PlayerControllerBP.hideHud = !PlayerControllerBP.hideHud;
+            HUDManager.Instance.HideHUD(PlayerControllerBP.hideHud);
         }
     }
 
-    
-    public static class PluginInfo {
+    public class CookiesVPP_InputClass : LcInputActions
+    {
+        [InputAction("HideHud", "<Keyboard>/F6", "", Name = "HideHud")]
+        public InputAction HideHud { get; set; }
+
+        public static CookiesVPP_InputClass instance = new CookiesVPP_InputClass();
+    }
+
+    public static class PluginInfo
+    {
         public const string PLUGIN_GUID = "CookiesVPP";
         public const string PLUGIN_NAME = "CookiesVPP";
         public const string PLUGIN_VERSION = "1.0.0";

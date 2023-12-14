@@ -1,5 +1,6 @@
+using GameNetcodeStuff;
 using HarmonyLib;
-
+using System.Linq;
 namespace CookiesVPP.patches
 {
     internal class HudManagerP

@@ -42,9 +42,12 @@ Type !hidehud in chat to hide/show the hud.
 │ │   └─ Updated Thunderstore link so its correct │
 │ ├ Version 1.0.3 ─────────────────────────────┬──┘
 │ ├── Removed LC_API Reference.. Wasnt needed  │ 
-│ ├── Added LethalCompanyInputUtils Reference 
+│ ├── Added LethalCompanyInputUtils Reference  │ 
 │ ├── Updated README ────────────┬─────────────┘
 │ │   └─ Added info about keybind└────────────────────────────────┐
-│ ├── Added the ability to hide your hud with the press of a key  │                                       
-└─┴───────────────────────────────────────────────────────────────┘
+│ ├── Added the ability to hide your hud with the press of a key  │
+│ ├ Version 1.0.4 ───────────────────────────────────────┬────────┘
+│ ├── Forgot to update the code on github lol            │         
+│ ├── Fixing the README again on thunderstore and github │                             
+└─┴──────────────────────────────────────────────────────┘
 ```
